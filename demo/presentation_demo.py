@@ -50,12 +50,12 @@ while True:
         if dataset_choice == "1":
             data_type = "training"
             has_ground_truth = True
-            print("✓ Selected: Training Data (with Ground Truth)")
+            print("✓ Selected: Labeled Data (with Ground Truth)")
             break
         elif dataset_choice == "2":
             data_type = "validation"
             has_ground_truth = False
-            print("✓ Selected: Validation Data (no Ground Truth)")
+            print("✓ Selected: Unlabeled Data (no Ground Truth)")
             break
         else:
             print("✗ Error: Please enter 1 or 2.")
@@ -76,7 +76,7 @@ while True:
                 print(f"✓ Selected Patient ID: {patient}")
                 break
             else:
-                print("✗ Error: Training Patient ID must be between 1 and 369. Please try again.")
+                print("✗ Error: Labeled Patient ID must be between 1 and 369. Please try again.")
         else:  # validation
             patient_input = input("\nEnter Patient ID (1-125): ").strip()
             patient_num = int(patient_input)
@@ -87,7 +87,7 @@ while True:
                 print(f"✓ Selected Patient ID: {patient}")
                 break
             else:
-                print("✗ Error: Validation Patient ID must be between 1 and 125. Please try again.")
+                print("✗ Error: Unlabeled Patient ID must be between 1 and 125. Please try again.")
     except ValueError:
         print("✗ Error: Please enter a valid number.")
     except KeyboardInterrupt:
